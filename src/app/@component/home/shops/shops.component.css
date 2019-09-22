@@ -1,0 +1,14 @@
+mat-card{
+    margin: 25px;
+    width: 40%;
+    float: right;
+}
+
+.card{
+    justify-items: center;
+    margin: 10px auto;
+}
+
+form p {
+    width: 30%
+}

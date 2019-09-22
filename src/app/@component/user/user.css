@@ -1,0 +1,21 @@
+.log{
+    display: flex;
+    margin: 70px auto;
+    padding: 10px;
+    text-align: center;
+    width: 30%;
+    border: 1px black solid;
+    flex-direction: column;
+    justify-content: center;
+}
+
+button{
+    margin: 5px 12px;
+}
+
+mat-hint{
+    color: red;
+    display: block;
+    margin: 5px;
+}
+

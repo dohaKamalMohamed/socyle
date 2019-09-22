@@ -1,0 +1,26 @@
+<div class="log">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Enter your email" type="email" name="email" formControlName="email">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                <mat-hint *ngIf="!f.email.valid && (submitted || f.email.touched)">Please enter your email</mat-hint>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="Enter your password" type="password" name="password"
+                    formControlName="password">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                <mat-hint *ngIf="!f.password.valid && (submitted || f.password.touched)">Please enter apassword</mat-hint>
+            </mat-form-field>
+        </p>
+        <mat-hint *ngIf="errorMsg">
+                {{errorMsg}}
+            </mat-hint>
+        <button mat-button type="submit">Log in</button>
+        <button routerLink="/register" mat-flat-button color="primary">Register</button>
+    </form>
+    </div>

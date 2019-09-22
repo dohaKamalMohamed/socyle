@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+    <div>
+        <a routerLink="shops">Shops</a>
+        <a routerLink="users">Users</a>
+        <a routerLink="subscibtion">Subscibtion</a>
+        <a routerLink="userShops">UserShops</a>
+    </div>
+
+    <div>
+        <span>{{currentUser.userName}}</span>
+        <button mat-button (click)="logOut()">LogOut</button>
+    </div>
+
+</mat-toolbar>
+<div class="container">
+        <router-outlet></router-outlet>
+</div>

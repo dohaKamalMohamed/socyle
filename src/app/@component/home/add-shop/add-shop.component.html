@@ -1,0 +1,37 @@
+<div class="log" >
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Shop title</mat-label>
+            <input matInput placeholder="Enter shop title" type="text" name="title" formControlName="title">
+            <mat-hint *ngIf="!f.title.valid && (submitted || f.title.touched)">Please enter shop title</mat-hint>
+        </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+          <mat-label>sub title</mat-label>
+          <input matInput placeholder="Enter shop  sub title" type="text" name="subTitle" formControlName="subTitle">
+          <mat-hint *ngIf="!f.subTitle.valid && (submitted || f.subTitle.touched)">Please enter shop  sub title</mat-hint>
+      </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+        <mat-label>Image</mat-label>
+        <input matInput placeholder="Enter shop image" type="text" name="imgURL" formControlName="imgURL">
+        <mat-hint *ngIf="!f.imgURL.valid && (submitted || f.imgURL.touched)">Please enter shop  image</mat-hint>
+    </mat-form-field>
+</p>
+<p>
+  <mat-form-field appearance="outline">
+      <mat-label>content</mat-label>
+      <input matInput placeholder="Enter shop content" type="text" name="contnent" formControlName="contnent">
+      <mat-hint *ngIf="!f.contnent.valid && (submitted || f.contnent.touched)">Please enter shop  content</mat-hint>
+  </mat-form-field>
+</p>
+    <mat-hint *ngIf="errorMsg">
+            {{errorMsg}}
+        </mat-hint>
+    <button mat-button (click)="onNoClick()">Close</button>
+    <button type="submit" mat-flat-button color="primary">Add</button>
+</form>
+</div>

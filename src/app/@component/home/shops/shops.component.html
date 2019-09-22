@@ -1,0 +1,27 @@
+<button mat-flat-button color="primary" (click)="openDialog()">Add shop</button>
+
+<div class="card">
+<mat-card class="example-card" *ngFor="let shop of shops">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{shop.title}}</mat-card-title>
+        <mat-card-subtitle>{{shop.subTitle}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="shop.imgURL" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+        <p>
+            {{shop.contnent}}
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button *ngIf="shop.Inforole.length==0" (click)="ADDlike(shop._id,'subscribed')">LIKE</button>
+        <button mat-button *ngIf="shop.Inforole.length>0&&shop.Inforole[0].shopRole=='NoRelation'" (click)="Updatelike(shop.Inforole[0]._id,'subscribed')">LIKE</button>
+        <button mat-button>ADMIN</button>
+        <button mat-button *ngIf="shop.Inforole.length>0&&shop.Inforole[0].shopRole=='subscribed'" (click)="Updatelike(shop.Inforole[0]._id,'NoRelation')">UNLIKE</button>
+        <button mat-button>SENDREQUEST</button>
+        <button mat-button *ngIf="shop.Inforole.length>0&&shop.Inforole[0].shopRole=='admin'" (click)="Edit(shop._id)">EDIT</button>
+        <button mat-button *ngIf="shop.Inforole.length>0&&shop.Inforole[0].shopRole=='admin'" (click)="delete(shop._id)">DELETE</button>
+    </mat-card-actions>
+</mat-card>
+
+</div>
